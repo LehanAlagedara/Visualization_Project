@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fertility Rates Visualization">
+    <meta name="keywords" content="D3.js, Data Visualization, Fertility Rates">
+    <meta name="author" content="Lehan Lochana Alagedara">
+    <title>Fertility Rates Visualization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin: 20px 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .buttons {
+            margin-bottom: 20px;
+        }
+
+        /* Styling for chart buttons */
+        .chart-button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .chart-button:hover {
+            background-color: #2980b9;
+        }
+
+        .chart-button.active {
+            background-color: #2ecc71;
+        }
+
+        /* Styling for the chart container */
+        .chart {
+            width: 800px;
+            height: 500px;
+            display: none; /* Hide all charts by default */
+        }
+
+        .chart.active {
+            display: block; /* Show the active chart */
+        }
+
+        /* Styling for the tooltip */
+        .tooltip {
+            position: absolute;
+            text-align: center;
+            width: auto;
+            height: auto;
+            padding: 10px;
+            font: 12px sans-serif;
+            background: lightsteelblue;
+            border: 0px;
+            border-radius: 8px;
+            pointer-events: none;
+            box-shadow: 0px 0px 6px #aaa;
+        }
+
+        /* Styling for the homepage button */
+        button {
+            background-color: #04AA6D;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #026d4f;
+        }
+
+        footer {
+            color: red;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>The Fertility Rates of OECD Countries from 2017 to 2021</h1>
+        <div class="buttons">
+            <!-- Buttons for selecting the year to view -->
+            <button class="chart-button" onclick="showChart('chart2017')">2017</button>
+            <button class="chart-button" onclick="showChart('chart2018')">2018</button>
+            <button class="chart-button" onclick="showChart('chart2019')">2019</button>
+            <button class="chart-button" onclick="showChart('chart2020')">2020</button>
+            <button class="chart-button" onclick="showChart('chart2021')">2021</button>
+        </div>
+        <!-- Divs to contain the charts for each year -->
+        <div id="chart2017" class="chart"></div>
+        <div id="chart2018" class="chart"></div>
+        <div id="chart2019" class="chart"></div>
+        <div id="chart2020" class="chart"></div>
+        <div id="chart2021" class="chart"></div>
+        <button onclick="window.location.href='index.html'">Back to Homepage</button>
+    </div>
+    <footer>COS30045 Data Visualization</footer>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="Dataset_2_script.js"></script>
+</body>
+</html>
